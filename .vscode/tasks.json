@@ -7,7 +7,7 @@
 			"command": "/usr/bin/clang++",
 			"args": [
 				"-std=c++17",
-        		"-stdlib=libc++",
+				"-stdlib=libc++",
 				"-g",
 				"${file}",
 				"-o",
@@ -23,6 +23,46 @@
 				"kind": "build",
 				"isDefault": true
 			}
+		},
+		{
+			"type": "shell",
+			"label": "cmake make",
+			"command": "cmake",
+			"args": [
+				"-S",
+				".",
+				"-B",
+				"build"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			}
+		},
+		{
+			"type": "shell",
+			"label": "cmake build",
+			"command": "cmake",
+			"args": [
+				"--build",
+				"build"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			}
+		},
+		{
+			"type": "shell",
+			"label": "cmake test",
+			"command": "ctest",
+			"options": {
+				"cwd": "${workspaceFolder}/build"
+			},
+			"dependsOn": [
+				"cmake make",
+				"cmake build"
+			],
+			"dependsOrder": "sequence",
+			"problemMatcher": []
 		}
 	]
 }
