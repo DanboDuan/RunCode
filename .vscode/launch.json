@@ -16,6 +16,16 @@
             "externalConsole": false,
             "MIMode": "lldb",
             "preLaunchTask": "clang++ build active file"
-        }
+        },
+        {
+            "name": "cmake build and debug project",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${command:cmake.launchTargetPath}",
+            "args": [],
+            "stopOnEntry": false,
+            "terminal": "console",
+            "cwd": "${workspaceFolder}",
+          }
     ]
 }
