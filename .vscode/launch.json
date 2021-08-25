@@ -5,6 +5,14 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Launch go",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "debugAdapter":"dlv-dap",
+            "program": "${file}"
+        },
+        {
             "name": "clang++ - Build and debug active file",
             "type": "lldb",
             "request": "launch",

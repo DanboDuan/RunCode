@@ -63,6 +63,47 @@
 			],
 			"dependsOrder": "sequence",
 			"problemMatcher": []
-		}
+		},
+        {
+            "label": "install",
+            "command": "go",
+            "args": [
+				"install", 
+				"-v", 
+				"./..."
+			],
+            "group": "build",
+            "type": "shell",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+        },
+        {
+            "label": "run",
+            "command": "go",
+            "args": [
+				"run", 
+				"${file}"
+			],
+            "group": "build",
+            "type": "shell",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+        },
+        {
+            "label": "test",
+            "command": "go",
+            "args": [
+				"test",
+				"-v", 
+				"./..."
+			],
+            "group": "test",
+            "type": "shell",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+        }
 	]
 }

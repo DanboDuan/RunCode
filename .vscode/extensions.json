@@ -5,6 +5,7 @@
         "ms-vscode.cpptools",
         "vadimcn.vscode-lldb",
         "leetcode.vscode-leetcode",
-        "llvm-vs-code-extensions.vscode-clangd"
+        "llvm-vs-code-extensions.vscode-clangd",
+        "golang.go"
     ]
 }
