@@ -20,4 +20,16 @@
       "--clang-tidy",
       "--all-scopes-completion",
     ],
+    "go.formatTool": "gofmt",
+    "go.formatFlags": [
+        "-s"
+    ],
+    "go.autocompleteUnimportedPackages": true,
+    "[go]": {
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    }
   }
