@@ -2,7 +2,7 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"type": "cppbuild",
+			"type": "shell",
 			"label": "clang++ build active file",
 			"command": "/usr/bin/clang++",
 			"args": [
@@ -64,46 +64,61 @@
 			"dependsOrder": "sequence",
 			"problemMatcher": []
 		},
-        {
-            "label": "install",
-            "command": "go",
-            "args": [
-				"install", 
-				"-v", 
+		{
+			"label": "install",
+			"command": "go",
+			"args": [
+				"install",
+				"-v",
 				"./..."
 			],
-            "group": "build",
-            "type": "shell",
+			"group": "build",
+			"type": "shell",
 			"options": {
 				"cwd": "${workspaceFolder}"
 			},
-        },
-        {
-            "label": "run",
-            "command": "go",
-            "args": [
-				"run", 
+		},
+		{
+			"label": "run",
+			"command": "go",
+			"args": [
+				"run",
 				"${file}"
 			],
-            "group": "build",
-            "type": "shell",
+			"group": "build",
+			"type": "shell",
 			"options": {
 				"cwd": "${workspaceFolder}"
 			},
-        },
-        {
-            "label": "test",
-            "command": "go",
-            "args": [
+		},
+		{
+			"label": "test",
+			"command": "go",
+			"args": [
 				"test",
-				"-v", 
+				"-v",
 				"./..."
 			],
-            "group": "test",
-            "type": "shell",
+			"group": "test",
+			"type": "shell",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			}
+		},
+		{
+			"label": "Swift build active file",
+			"command": "swiftc",
+			"args": [
+				"-g",
+				"${file}",
+				"-o",
+				"${workspaceFolder}/build/${fileBasenameNoExtension}"
+			],
+			"group": "build",
+			"type": "shell",
 			"options": {
 				"cwd": "${workspaceFolder}"
 			},
-        }
+		}
 	]
 }
